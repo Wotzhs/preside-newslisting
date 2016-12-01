@@ -1,0 +1,14 @@
+{
+    "name":"newspreside.com",
+    "version":"1.0.0",
+    "author":"l33t",
+    "slug":"news_preside",
+    "createPackageDirectory" : false,
+    "private":true,
+    "installPaths":{
+        "presidecms":"preside"
+    },
+    "dependencies":{
+        "presidecms":"stable"
+    }
+}
