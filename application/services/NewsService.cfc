@@ -9,7 +9,7 @@ component {
 		return this;
 	}
 
-	function loadNews( offset, numberOfNews ){
+	function loadNews(  numberOfNews=10, offset=1 ){
 		return _getNewsDao().selectData(
 			  selectFields = [
 			  	  'page.title'

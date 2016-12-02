@@ -10,13 +10,13 @@ component {
 	 }
 
 	private function index( event, rc, prc, args={} ) {
-
-		var offset       = rc.offset ?: 1;
-		var numberOfNews = event.getPageProperty( 'posts_per_page' ) ?: 10;
 		
-		args.data = _getNewsService().loadNews( offset, numberOfNews );
+		args.numberOfNews = event.getPageProperty( 'posts_per_page' )
+		args.data         = _getNewsService().loadNews( args.numberOfNews );
 
-		writeDump(args.data); abort;
+		event.include('js-loadmore');
+
+		// writeDump(args.data); abort;
 
 		return renderView(
 			  view          = 'page-types/news_listing/index'
@@ -26,10 +26,15 @@ component {
 		);
 	}
 
+	public function loadNews( event, rc, prc, args={} ) {
+		prc.data = _getNewsService().loadNews( rc.numberOfNews, rc.offset );
+		event.setView( view='page-types/news_listing/_newslist', noLayout=true );
+	}
+
 	private function _getNewsService() {
 		return _newsService;
 	}
 	private function _setNewsService( newsService ) {
-		_newsService = newsService
+		_newsService = newsService;
 	}	
 }
