@@ -6,7 +6,9 @@
 
 	#args.main_content#
 
+	<h1>Welcome #getLoggedInUserDetails().display_name#</h1>
 
+	<br><br>
 	<cfif #isLoggedIn()#>
 		<a href="#event.buildLink(linkTo='login.logout')#" class="btn btn-danger">Log Out</a>
 	<cfelse>
