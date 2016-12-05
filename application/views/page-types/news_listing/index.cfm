@@ -1,8 +1,3 @@
-<!---
-	This view file has been automatically created by the preside dev tools
-	scaffolder. Please fill with meaningful content and remove this comment
---->
-
 <cf_presideparam name="args.title"         field="page.title"        editable="true" />
 <cf_presideparam name="args.main_content"  field="page.main_content" editable="true" />
 <cf_presideparam name="args.posts_per_page" editable="true" />
