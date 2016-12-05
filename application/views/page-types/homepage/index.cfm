@@ -5,4 +5,11 @@
 	<div class="jumbotron"><h1>#args.title#</h1></div>
 
 	#args.main_content#
+
+
+	<cfif #isLoggedIn()#>
+		<a href="#event.buildLink(linkTo='login.logout')#" class="btn btn-danger">Log Out</a>
+	<cfelse>
+		<a href="#event.buildLink(page='login')#" class="btn btn-primary">Log In</a>
+	</cfif>
 </cfoutput>
