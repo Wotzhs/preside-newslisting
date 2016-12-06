@@ -9,9 +9,12 @@
 		</p>
 	</cfif>
 
-	<form action="#event.buildLink(linkTo="login.attemptLogin")#" method="get">
-		<input type="email"    name="loginId"    placeholder="Email"    class="form-control">
-		<input type="password" name="password"   placeholder="Password" class="form-control">
+	<form class="well" action="#event.buildLink(linkTo="login.attemptLogin")#" method="get">
+		#renderForm(
+			  formName = "login.login"
+			, context     = "website"
+			, fieldLayout = "formcontrols.layouts.login"
+		)#
 		<input type="submit"   value="Login"     class="btn btn-success">
 	</form>	
 </cfoutput>
