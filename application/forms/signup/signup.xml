@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+	<tab>
+		<fieldset>
+			<field name="user.loginId"     control="textInput"  required="true"  placeholder="Login ID"     />
+			<field name="user.displayName" control="textInput"  required="true"  placeholder="Display Name" />
+			<field name="user.email"       control="emailInput" required="true"  placeholder="Email"        />
+			<field name="user.password"    control="password"   required="true"  placeholder="Password"     />
+		</fieldset>
+	</tab>
+</form>
