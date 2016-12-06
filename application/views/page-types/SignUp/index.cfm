@@ -31,7 +31,13 @@
 			</div>
 			<input type="submit" value="Sign Up" class="btn btn-success">
 
+		#renderForm(
+			  formName = "signup.signup"
+		)#	
+	
 		</form>
 	</div>
 
-	</cfoutput>
+	
+
+</cfoutput>
