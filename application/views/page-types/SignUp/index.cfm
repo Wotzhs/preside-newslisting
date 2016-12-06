@@ -17,24 +17,13 @@
 
 	<div class="container">
 		<form class="well" action="#event.buildLink(linkTo="page-types.SignUp.signUp")#" method="post">
-			<div class="form-group">
-				<input type="text" name="user.loginId"     class="form-control" placeholder="Login ID" >
-			</div>
-			<div class="form-group">
-				<input type="text" name="user.displayName" class="form-control" placeholder="Display Name">
-			</div>
-			<div class="form-group">
-				<input type="text" name="user.email"       class="form-control" placeholder="Email" >				
-			</div>
-			<div class="form-group">
-				<input type="text" name="user.password"    class="form-control" placeholder="Password" >				
-			</div>
+			#renderForm(
+				  formName    = "signup.signup"
+				, context     = "website"
+				, fieldLayout = "formcontrols.layouts.signup"
+			)#	
+			<br>
 			<input type="submit" value="Sign Up" class="btn btn-success">
-
-		#renderForm(
-			  formName = "signup.signup"
-		)#	
-	
 		</form>
 	</div>
 
