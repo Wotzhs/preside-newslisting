@@ -1,11 +1,6 @@
 <cf_presideparam name="args.title"         field="page.title"        editable="true" />
 <cf_presideparam name="args.main_content"  field="page.main_content" editable="true" />
 
-<cfparam name="form.user.loginId"     default="" />
-<cfparam name="form.user.email"       default="" />
-<cfparam name="form.user.password"    default="" />
-<cfparam name="form.user.displayName" default="" />
-
 <cfoutput>
 	<h1>#args.title#</h1>
 	#args.main_content#

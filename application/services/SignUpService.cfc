@@ -14,14 +14,14 @@
 
 	public function signUp( loginId, email, password, displayName ) {
 
-		ifExists = _getSignUpDao().selectData(
+		ifExists   = _getSignUpDao().selectData(
 			filter = { email_address = email }
 		);
 
 		if (ifExists.recordCount) { return "EMAIL_EXISTS" };
 
-		createAccount = _getSignUpDao().insertData(
-			data = {
+		createAccount       = _getSignUpDao().insertData(
+			data            = {
 			  login_id      = loginId
 			, email_address = email
 			, password      = password
