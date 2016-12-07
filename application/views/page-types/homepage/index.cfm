@@ -9,6 +9,8 @@
 	<cfif #isLoggedIn()#>
 		<h1>Welcome #getLoggedInUserDetails().display_name#</h1>
 		<br><br>
+		<a href="##" class="btn btn-default">Edit Profile</a>
+		<br><br>
 		<a href="#event.buildLink(linkTo='login.logout')#" class="btn btn-danger">Log Out</a>
 	<cfelse>
 		<a href="#event.buildLink(page='login')#" class="btn btn-primary">Log In</a>
