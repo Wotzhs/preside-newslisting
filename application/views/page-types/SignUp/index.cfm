@@ -15,7 +15,7 @@
 			<a href="##" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 				<cfswitch expression="#args.message#">
 					<cfcase value="EMAIL_EXISTS">				
-						Sign Up Failed: Email has already been registered please try loggin in!
+						Sign Up Failed: Email has already been registered please try <a href="#event.buildLink(page='login')#">loggin in!</a>
 					</cfcase>
 					<cfcase value="INCOMPLETE_FORM">
 						Sign Up Failed: Please ensure all required fields are filled in!

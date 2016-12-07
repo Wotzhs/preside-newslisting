@@ -31,8 +31,8 @@
 
 		if ( !validationResult.validated() ) {
 			setNextEvent( 
-				  url           = event.buildLink (page="SignUp")
-				, persistStruct = {
+				  url                  = event.buildLink (page="SignUp")
+				, persistStruct        = {
 					  message          = "INCOMPLETE_FORM"
 					, validationResult = validationResult
 				  }
@@ -41,8 +41,23 @@
 		}
 
 		var hashedPassword = _getBcryptService().hashPw(rc.user.password)
-		prc.data = _getSignUpService().signUp( rc.user.loginId, rc.user.email, hashedPassword, rc.user.displayName );
-		if (prc.data == "EMAIL_EXISTS") { setNextEvent( url=event.buildLink( page="SignUp" ), persistStruct = { message = prc.data }); }
+		var createAccount  = _getSignUpService().signUp( rc.user.loginId, rc.user.email, hashedPassword, rc.user.displayName );
+		if (createAccount == "EMAIL_EXISTS") { 
+			setNextEvent( 
+				  url           = event.buildLink( page="SignUp" )
+				, persistStruct = { 
+					message     = createAccount 
+				  }
+			);
+			return; 
+		}
+
+		setNextEvent(
+			  url              = event.buildLink( page="login")
+			, persistStruct    = {
+				message        = "SIGN_UP_SUCCESS" 
+			  } 
+		);
 	}
 
 	private function _getSignUpService() {

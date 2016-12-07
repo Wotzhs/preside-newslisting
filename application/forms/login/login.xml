@@ -2,8 +2,8 @@
 <form>
 	<tab>
 		<fieldset>
-			<field name="user.email"    required="true" control="textInput" placeholder="Email"    />
-			<field name="user.password" required="true" control="password"  placeholder="Password" />
+			<field name="loginId"  required="true" control="textInput" placeholder="Email"    />
+			<field name="password" required="true" control="password"  placeholder="Password" />
 		</fieldset>	
 	</tab>
 </form>
