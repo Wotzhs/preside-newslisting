@@ -16,6 +16,12 @@
 					Sign Up Successful: You may now proceed to login below
 				</p>
 			</cfcase>
+			<cfcase value="LOGIN_REQUIRED">
+				<p class="alert alert-danger alert-dismissable fade in">
+					<a href="##" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+					Please log in to continue
+				</p>
+			</cfcase>
 		</cfswitch>
 		
 	</cfif>
