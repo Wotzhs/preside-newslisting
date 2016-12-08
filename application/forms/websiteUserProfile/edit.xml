@@ -2,7 +2,7 @@
 <form>
 	<tab>
 		<fieldset>
-			<field name="user.displayName" control="textInput" required="true">
+			<field name="display_name" control="textInput" required="true" label="page-types.webUserProfileEditPage:form.displayName.label"/>
 		</fieldset>
 	</tab>
 </form>
