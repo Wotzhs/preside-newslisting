@@ -7,7 +7,11 @@
 	#args.main_content#
 
 	<cfif #isLoggedIn()#>
-		<h1>Welcome #getLoggedInUserDetails().display_name#</h1>
+		<h1>Welcome 
+			<a href="#event.buildLink(linkTo='page-types.webUserShowPage.retrieveProfile.', queryString='id='&getLoggedInUserId())#">
+				#getLoggedInUserDetails().display_name#
+			</a>
+		</h1>
 		<br><br>
 		<a href="#event.buildLink(page='webUserProfileEditPage')#" class="btn btn-default">Edit Profile</a>
 		<br><br>
