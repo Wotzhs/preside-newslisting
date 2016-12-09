@@ -9,31 +9,13 @@ component {
 	 	return this;
 	 }
 
-	// private function index( event, rc, prc, args={}) {
+	public function show( event, rc, prc, args={} ) {
 
-	//  	args.targetProfile  = rc.targetUserProfile ?: "";
-
-	//  	return renderView(
-	// 		  view          = 'page-types/SignUp/index'
-	// 		, presideObject = 'SignUp'
-	// 		, id            = event.getCurrentPageId()
-	// 		, args          = args
-	// 	);
-	//  }
-
-	public function retrieveProfile( event, rc, prc, args={} ) {
-		var targetUserProfile = _getWebsiteUser().selectData(
-			filter            = { id = rc.id } 
+		prc.targetProfile = _getWebsiteUser().selectData(
+			filter = { id = prc.profileId }
 		);
-
-		// dump(targetUserProfile); abort;
-
-		setNextEvent(
-			  url           = event.buildLink( page="webUserShowPage" )
-			, persistStruct = {
-				targetUSer  = targetUserProfile 
-			}
-		)
+		
+		event.setView('page-types/webUserShowPage/_show');
 	}
 
 	private function _getWebsiteUser() {

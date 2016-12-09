@@ -8,7 +8,7 @@
 
 	<cfif #isLoggedIn()#>
 		<h1>Welcome 
-			<a href="#event.buildLink(linkTo='page-types.webUserShowPage.retrieveProfile.', queryString='id='&getLoggedInUserId())#">
+			<a href="#event.buildLink( profileId=getLoggedInUserId() )#">
 				#getLoggedInUserDetails().display_name#
 			</a>
 		</h1>
