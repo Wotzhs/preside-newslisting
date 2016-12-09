@@ -1,6 +1,6 @@
 /**
  * @allowedParentPageTypes *
- * @allowedChildPageTypes  webUserProfileEditPage
+ * @allowedChildPageTypes  webUserProfileEditPage,webUserShowPage
  * @isSystemPageType       true
  */
 

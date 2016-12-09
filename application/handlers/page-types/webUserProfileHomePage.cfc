@@ -31,6 +31,7 @@ component {
 			, args          = args
 		);
 	}
+
 	private function _getWebsiteUser() {
 		return _websiteUser;
 	}
