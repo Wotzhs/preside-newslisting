@@ -9,13 +9,21 @@ component {
 	 	return this;
 	 }
 
+	 public void function preHandler( event ) output=false {
+	 	if(!isLoggedIn() || isAutoLoggedIn() ){
+	 		event.accessDenied( reason="Login Required");
+	 	}
+	 }
+
 	public function show( event, rc, prc, args={} ) {
 
 		prc.targetProfile = _getWebsiteUser().selectData(
 			filter = { id = prc.profileId }
 		);
-		
-		event.setView('page-types/webUser/index');
+
+		prc.message = rc.message ?: "";
+				
+		event.setView( view='page-types/webUser/show');
 	}
 
 	public function edit ( event, rc, prc, args={} ) {
