@@ -20,7 +20,7 @@
 	</cfif>
 
 	<div class="container">
-		<form class="well" action="#event.buildLink(linkTo="page-types.SignUp.signUp")#" method="get">
+		<form class="well" action="#event.buildLink(linkTo="page-types.SignUp.signUp")#" method="post">
 			#renderForm(
 				  formName         = "signup.signup"
 				, context          = "website"

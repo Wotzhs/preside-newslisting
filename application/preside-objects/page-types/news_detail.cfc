@@ -2,6 +2,7 @@
  * @allowedParentPageTypes news_listing
  * @allowedChildPageTypes  none
  * @showInSitetree         false
+ * @sitetreeGridFields     page.title,datecreated,datemodified
  */
 
 component  {

@@ -26,12 +26,18 @@
 		
 	</cfif>
 
-	<form class="well" action="#event.buildLink(linkTo="login.attemptLogin")#" method="get">
-		#renderForm(
-			  formName = "login.login"
-			, context     = "website"
-			, fieldLayout = "formcontrols.layouts.login"
-		)#
-		<input type="submit"   value="Login"     class="btn btn-success">
-	</form>	
+	<div class="well">
+		<form action="#event.buildLink(linkTo="login.attemptLogin")#" method="get">
+			#renderForm(
+				  formName = "login.login"
+				, context     = "website"
+				, fieldLayout = "formcontrols.layouts.login"
+			)#
+			<input type="submit"   value="Login"     class="btn btn-success">
+		</form>	
+		<br>
+		<a href="#event.buildLink(page='forgotten_password')#">Forgot password?</a>	
+		<p>New to Preside News? <a href="#event.buildLink(page='signup')#">Create an account now</a></p>
+	</div>
+	
 </cfoutput>

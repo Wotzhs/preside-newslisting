@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<form i18nBaseUri="page-types.webUserProfileEditPage:">
+<form i18nBaseUri="page-types.webUser:">
 	<!--
 		This page type form has been scaffolded by the Preside dev tools scaffolder
 
@@ -37,8 +37,8 @@
 		</fieldset>
 	</tab>
 
-	<tab id="webUserProfileEditPage">
-		<fieldset id="webUserProfileEditPage">
+	<tab id="webUser">
+		<fieldset id="webUser">
 			<!--
 				we have created this tab and fieldset for you to put in all your custom
 				fields for this page type. You may wish to move the fields to different tabs, remove them from the form

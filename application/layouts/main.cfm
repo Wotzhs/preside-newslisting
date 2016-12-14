@@ -26,16 +26,25 @@
 	<body>
 		<div class="container">
 			<div class="header">
+				<cfif len(trim(getLoggedInUserId()))>
+					<ul class="nav nav-pills pull-right">
+						<li><a href="#event.buildLink(linkTo='login.logout')#">Log out</a></li>
+					</ul>
+				<cfelse>
+					<ul class="nav nav-pills pull-right">
+						<li><a href="#event.buildLink(page='login')#">Log in</a></li>
+					</ul>
+				</cfif>
 				<ul class="nav nav-pills pull-right">
 					#mainNav#
 				</ul>
-				<h3 class="text-muted"><a href="/">Preside CMS</a></h3>
+				<h3 class="text-muted"><a href="/">Preside News</a></h3>
 			</div>
 
 			#body#
 
 			<div class="footer">
-				<p>&copy; Pixl8 2013-#Year( Now() )#</p>
+				<p>&copy; Preside News #Year( Now() )#</p>
 			</div>
 		</div>
 
