@@ -10,8 +10,9 @@ component {
 	}
 
 	function loadNews(  numberOfNews=10, offset=1 ){
-		return _getNewsDao().selectData(
-			  selectFields = [
+		return _getNewsDao().selectManyToManyData(
+			  propertyName = "category"
+			, selectFields = [
 			  	  'page.title'
 			  	, 'page.slug'
 			  	, 'page.main_image'
@@ -19,6 +20,7 @@ component {
 			  	, 'page.main_content'
 			  	, 'news_detail.date_published'
 			  	, 'news_detail.datecreated'
+			  	, 'news_category.label'
 			  ]
 			, orderBy      = '-news_detail.datecreated'
 			, startRow     = offset

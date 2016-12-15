@@ -6,10 +6,10 @@
 <cf_presideparam name="args.title"         field="page.title"        editable="true" />
 <cf_presideparam name="args.main_content"  field="page.main_content" editable="true" />
 <cf_presideparam name="args.date_published" editable="true" />
-<cf_presideparam name="args.category" editable="true" />
 
 
 <cfoutput>
+	#rc.label#
 	<h1>#args.title#</h1>
 	#args.main_content#
 </cfoutput>

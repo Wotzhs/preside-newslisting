@@ -15,7 +15,6 @@ component {
 		args.data         = _getNewsService().loadNews( args.numberOfNews );
 
 		event.include('js-loadmore');
-
 		// writeDump(args.data); abort;
 
 		return renderView(
