@@ -1,11 +1,11 @@
 component {
 
 	/**
-	 * @websiteUser.inject presidecms:object:website_user 
+	 * @webUserService.inject webUserService
 	 */ 
 
-	function init( websiteUser ) {
-		_setWebsiteUser( websiteUSer );
+	function init( webUserService ) {
+		_setWebUserService( webUserService );
 	 	return this;
 	 }
 
@@ -17,9 +17,7 @@ component {
 
 	public function show( event, rc, prc, args={} ) {
 
-		prc.targetProfile = _getWebsiteUser().selectData(
-			filter = { id = prc.profileId }
-		);
+		prc.targetProfile = _getWebUserService().showProfile( prc.profileId );
 
 		prc.message = rc.message ?: "";
 				
@@ -49,12 +47,7 @@ component {
 			return;
 		}
 
-		var update = _getWebsiteUser().updateData(
-			  id                      = getLoggedInUserDetails().id
-			, data                    = { display_name   = rc.display_name }
-			, forceUpdateAll          = true
-			, updateManyToManyRecords = true
-		);
+		_getWebUserService().updateProfile( getLoggedInUserDetails().id, rc.display_name )
 		getLoggedInUserDetails().display_name = rc.display_name;
 
 		setNextEvent(
@@ -65,10 +58,10 @@ component {
 		)
 	}
 
-	private function _getWebsiteUser() {
-		return _websiteUser;
+	private function _getWebUserService() {
+		return _webUserService;
 	}
-	private function _setWebsiteUser( websiteUser ) {
-		_websiteUser = websiteUser;
+	private function _setWebUserService( webUserService ) {
+		_webUserService = webUserService;
 	}
 }
