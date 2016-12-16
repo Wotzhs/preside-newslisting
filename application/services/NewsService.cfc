@@ -1,11 +1,11 @@
 component {
 
 	/**
-	 * @newsDao.inject presidecms:object:news_detail
+	 * @newsDao.inject        presidecms:object:news_detail
 	 */
 
-	function init( required any newsDao){
-		_setNewsDao( arguments.newsDao );
+	function init( newsDao ){
+		_setNewsDao( newsDao );
 		return this;
 	}
 
@@ -13,7 +13,8 @@ component {
 		return _getNewsDao().selectManyToManyData(
 			  propertyName = "category"
 			, selectFields = [
-			  	  'page.title'
+				  'page.id'
+			  	, 'page.title'
 			  	, 'page.slug'
 			  	, 'page.main_image'
 			  	, 'page.teaser'
@@ -28,11 +29,19 @@ component {
 		)
 	}
 
+	function retriveCategories( pageId ) {
+		return _getNewsDao().selectManyToManyData(
+			  propertyName = "category"
+			, selectFields = [ 'news_category.label' ]
+			, filter       = { id = pageId}
+		);
+	}
+
 	private function _getNewsDao() {
 		return _newsDao;
 	}
-
 	private function _setNewsDao( newsDao ) {
 		_newsDao = arguments.newsDao;
 	}
+
 }
