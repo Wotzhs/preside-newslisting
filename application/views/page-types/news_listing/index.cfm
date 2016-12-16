@@ -17,6 +17,7 @@
 					<p class="pull-right">Category: #label#</p>
 				</div>
 				<p>#teaser#</p>
+				<p>Comments: #args.commentCount[id]#</p>
 			</div>
 		</cfloop>
 	</div>
