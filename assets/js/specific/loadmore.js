@@ -20,7 +20,7 @@ document.querySelector('#loadmore').onclick = function(){
 		method: 'post',
 		data: {numberOfNews: numberOfNews, offset: offset},
 		success: function(data){
-			$('.newslist').append(data);
+			$('#newslist').append(data);
 		},
 		fail: function(data){
 			console.log(data)
