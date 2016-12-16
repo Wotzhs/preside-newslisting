@@ -23,17 +23,17 @@
 		<span class="btn btn-danger">#label#</span>
 	</cfloop>
 
-	#rc.label#
 	<h1>#args.title#</h1>
 	#args.main_content#
-	#event.getCurrentPageId()#
-	<br><br>
 
+	<br><br>
+	<hr>
+	<h1>What other says</h1>
 	<cfloop query=args.comments>
-		<div class="well">
-			<h1>#comment#</h1>
-			<p>said #display_name# on #dateFormat(datecreated, "dd/mm/yyyy")#</p>
-		</div>
+		<blockquote>
+			<p>#comment#</p>
+			<footer>- said <a href="#event.buildLink(profileId=id)#">#display_name#</a> on <cite>#dateFormat(datecreated, "dd/mm/yyyy")#</cite></footer>
+		</blockquote>
 	</cfloop>
 
 	<form action="#event.buildLink(linkTo="comment.addComment")#" method="post">
@@ -41,6 +41,6 @@
 			<textarea class="form-control" placeholder="What do you think?" name="comment"></textarea>
 		</div>
 		<input type="hidden" name="page" value="#event.getCurrentPageId()#">
-		<input class="btn btn-primary" type="submit">
+		<input class="btn btn-primary" type="submit" value="comment">
 	</form>
 </cfoutput>

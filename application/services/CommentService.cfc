@@ -15,6 +15,7 @@ component {
 				  "comment"
 				, "datecreated"
 				, "website_user.display_name" 
+				, "website_user.id"
 			  ]
 			, filter       = { page = pageId }
 		);

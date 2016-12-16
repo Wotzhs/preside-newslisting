@@ -1,7 +1,7 @@
 component {
 
 	/**
-	 * @newsDao.inject        presidecms:object:news_detail
+	 * @newsDao.inject         presidecms:object:news_detail
 	 */
 
 	function init( newsDao ){
@@ -10,9 +10,8 @@ component {
 	}
 
 	function loadNews(  numberOfNews=10, offset=1 ){
-		return _getNewsDao().selectManyToManyData(
-			  propertyName = "category"
-			, selectFields = [
+		return _getNewsDao().selectData(
+			  selectFields = [
 				  'page.id'
 			  	, 'page.title'
 			  	, 'page.slug'
@@ -21,7 +20,6 @@ component {
 			  	, 'page.main_content'
 			  	, 'news_detail.date_published'
 			  	, 'news_detail.datecreated'
-			  	, 'news_category.label'
 			  ]
 			, orderBy      = '-news_detail.datecreated'
 			, startRow     = offset

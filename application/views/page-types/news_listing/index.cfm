@@ -3,22 +3,28 @@
 <cf_presideparam name="args.posts_per_page" editable="true" />
 
 
+
 <cfoutput>
 	<h1>#args.title#</h1>
 	#args.main_content#
-	<div class="newslist">
+
+	<div class="row" id="newslist">
 		<cfloop query="#args.data#">
-			<div class="well">
-				<div class="row">
-					<h1 class="pull-left">
-						<a href="#'news/'&slug&'.html?label='&label#">#title#</a>
-					</h1>
-					<p class="pull-right">published on: #dateFormat( date_published, 'dd-mm-yyyy' )#</p>
-					<p class="pull-right">Category: #label#</p>
+			<a href="#'news/'&slug&'.html'#">
+				<div class="col-sm-6 col-md-6">
+					<div class="thumbnail">
+						<img src="">
+						<div class="caption">
+							<h3>#title#</h3>
+							<p>#teaser#</p>
+							<p>Published on: #dateFormat( date_published, 'dd mmm yyyy' )#</p>
+							<cfloop query=#args.labels[id]#>
+								<span class="btn btn-danger btn-xs"><i class="fa fa-tag"></i> #label#</span>
+							</cfloop>
+						</div>
+					</div>
 				</div>
-				<p>#teaser#</p>
-				<p>Comments: #args.commentCount[id]#</p>
-			</div>
+			</a>
 		</cfloop>
 	</div>
 
