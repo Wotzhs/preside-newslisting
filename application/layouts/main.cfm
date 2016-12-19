@@ -7,6 +7,7 @@
 	event.include( "css-bootstrap" )
 	     .include( "css-layout"    )
 	     .include( "js-bootstrap"  )
+	     .include( "/css/admin/frontend/" )
 	     .include( "js-jquery"     );
 </cfscript>
 

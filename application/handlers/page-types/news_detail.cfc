@@ -15,7 +15,7 @@ component {
 
 		args.labels   = _getNewsService().retriveCategories( event.getCurrentPageId() );
 		args.comments = _getCommentService().loadComment( event.getCurrentPageId() );
-		
+		// dump(args.comments);abort;
 		return renderView(
 			   view          = "page-types/news_detail/index"
 			,  presideObject = "news_detail"
