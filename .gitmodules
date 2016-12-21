@@ -1,0 +1,21 @@
+[submodule "website/application/extensions/preside-ext-elasticsearch"]
+	path = website/application/extensions/preside-ext-elasticsearch
+	url = git@pixl8.git.beanstalkapp.com:/pixl8/preside-ext-elasticsearch.git
+[submodule "application/extensions/preside-ext-elasticsearch"]
+	path = application/extensions/preside-ext-elasticsearch
+	url = git@pixl8.git.beanstalkapp.com:/pixl8/preside-ext-elasticsearch.git
+[submodule "application/application/extensions/preside-ext-sync-resource-library"]
+	path = application/application/extensions/preside-ext-sync-resource-library
+	url = git@pixl8.git.beanstalkapp.com:/pixl8/preside-ext-resource-library.git
+[submodule "extensions/preside-ext-sync-resource-library"]
+	path = extensions/preside-ext-sync-resource-library
+	url = git@pixl8.git.beanstalkapp.com:/pixl8/preside-ext-resource-library.git
+[submodule "application/extensions/preside-ext-sync-resource-library"]
+	path = application/extensions/preside-ext-sync-resource-library
+	url = git@pixl8.git.beanstalkapp.com:/pixl8/preside-ext-resource-library.git
+[submodule "website/application/extensions/preside-ext-resource-library.git"]
+	path = website/application/extensions/preside-ext-resource-library.git
+	url = git@pixl8.git.beanstalkapp.com:/pixl8/preside-ext-resource-library.git
+[submodule "application/extensions/preside-ext-resource-library.git"]
+	path = application/extensions/preside-ext-resource-library.git
+	url = git@pixl8.git.beanstalkapp.com:/pixl8/preside-ext-resource-library.git

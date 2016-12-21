@@ -1,39 +1,27 @@
 component {
 
-	/**
-	 * @commentService.inject CommentService 
-	 * @newsService.inject    NewsService
-	 */
-
-	function init( commentService, newsService ) {
-		_setCommentService( commentService );
-		_setNewsService( newsService );
-		return this;
-	}
+	property name="commentService" inject="CommentService";
+	property name="newsService"    inject="NewsService";
 
 	function index( event, rc, prc, args={} ) {
 
-		args.labels   = _getNewsService().retriveCategories( event.getCurrentPageId() );
-		args.comments = _getCommentService().loadComment( event.getCurrentPageId() );
-		// dump(args.comments);abort;
+		var currentPageId = event.getCurrentPageId();
+		args.labels       = newsService.retrieveCategories( currentPageId );
+		args.comments     = commentService.loadComment( currentPageId );
+		args.relatedNews  = ''
+		
+		// retreive related news based on categories
+		for ( row =1; row <= args.labels.recordCount; row= (row+1) ){
+			args.relatedNews = newsService.getRelatedNews( args.labels['id'][row]);
+		}
+
+		// dump(args.relatedNews); abort;
+		
 		return renderView(
 			   view          = "page-types/news_detail/index"
 			,  presideObject = "news_detail"
-			,  id            = event.getCurrentPageId()
+			,  id            = currentPageId
 			,  args          = args
 		)
-	}
-
-	private function _getCommentService() {
-		return _commentService;
-	}	
-	private function _setCommentService( commentService ) {
-		_commentService = commentService;
-	}
-	private function _getNewsService() {
-		return _newsService;
-	}
-	private function _setNewsService( newsService ) {
-		_newsService = newsService;
 	}	
 }
