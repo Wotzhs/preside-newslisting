@@ -3,10 +3,9 @@
 	param name="args.label"    type="string";
 	param name="args.help"     type="string";
 	param name="args.for"      type="string";
-	param name="args.error"    type="string";
 	param name="args.required" type="boolean";
 
-	hasError = Len( Trim( args.error ) );
+	hasError = Len( Trim( args.error ?: "" ) );
 </cfscript>
 
 <cfoutput>

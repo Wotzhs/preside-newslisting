@@ -1,8 +1,3 @@
-<!---
-	This view file has been automatically created by the preside dev tools
-	scaffolder. Please fill with meaningful content and remove this comment
---->
-
 <cf_presideparam name="args.title"         field="page.title"        editable="true" />
 <cf_presideparam name="args.main_content"  field="page.main_content" editable="true" />
 <cf_presideparam name="args.date_published" editable="true" />
@@ -12,12 +7,6 @@
 
 
 <cfoutput>
-	<!--- <ul class="nav nav-pills">
-		<cfloop query=args.labels>
-			<li class="active"><a href="">#label#</a></li>
-		</cfloop>
-	</ul> --->
-
 	<p>
 		<span>This post is tagged under:</span>&ensp;
 		<cfloop query=args.labels>
@@ -36,7 +25,7 @@
 		<cfloop query=args.comments>
 			<blockquote>
 				<p>#comment#</p>
-				<footer>- said <a href="#event.buildLink(profileId=id)#">#display_name#</a> on <cite>#dateFormat(datecreated, "dd/mm/yyyy")#</cite></footer>
+				<footer>- said <a href="#event.buildLink(profileId=id)#">#display_name#</a> on <cite>#dateFormat( datecreated, "dd/mm/yyyy" )#</cite></footer>
 			</blockquote>
 		</cfloop>
 	<cfelse>

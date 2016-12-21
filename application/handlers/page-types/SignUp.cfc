@@ -33,20 +33,20 @@
 			setNextEvent( 
 				  url                  = event.buildLink (page="SignUp")
 				, persistStruct        = {
-					  message          = "INCOMPLETE_FORM"
+					  errorMessage    = translateResource('page-type.SignUp:invalid_form_data')
 					, validationResult = validationResult
 				  }
 			); 
 			return;
 		}
 
-		var hashedPassword = _getBcryptService().hashPw(rc.user.password)
+		var hashedPassword = _getBcryptService().hashPw( rc.user.password )
 		var createAccount  = _getSignUpService().signUp( rc.user.loginId, rc.user.email, hashedPassword, rc.user.displayName );
-		if (createAccount == "EMAIL_EXISTS") { 
+		if ( createAccount == "EMAIL_EXISTS" ) { 
 			setNextEvent( 
 				  url           = event.buildLink( page="SignUp" )
 				, persistStruct = { 
-					message     = createAccount 
+					errorMessage     = 'Sign Up Failed: Email has already been registered please try <a href="#event.buildLink(page='login')#">loggin in!</a>'
 				  }
 			);
 			return; 

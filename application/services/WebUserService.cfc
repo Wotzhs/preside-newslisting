@@ -19,8 +19,6 @@ component {
 		return _getWebsiteUser().updateData(
 			  id                      = profileId
 			, data                    = { display_name = updatedName }
-			, forceUpdateAll          = true
-			, updateManyToManyRecords = true
 		);
 	}
 
