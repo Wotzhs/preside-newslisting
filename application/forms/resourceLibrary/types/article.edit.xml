@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+	<tab id="standard" title="preside-objects.resource_library_resource:standard.tab.title">
+		<fieldset id="standard">
+			<field name="name" control="textInput" />	
+		</fieldset>
+	</tab>
+</form>
