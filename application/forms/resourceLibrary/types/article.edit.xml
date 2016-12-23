@@ -2,6 +2,8 @@
 <form>
 	<tab id="standard" title="preside-objects.resource_library_resource:standard.tab.title">
 		<fieldset id="standard">
+			<field sortorder="0" binding="resource_library_resource.resource_id" control="hidden" required="false" />
+
 			<field name="name" control="textInput" />	
 		</fieldset>
 	</tab>

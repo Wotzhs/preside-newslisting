@@ -18,6 +18,7 @@ component {
 		bundle.asset( "css-bootstrap" ).before( "*" );
 		bundle.asset( "js-bootstrap" ).dependsOn( "js-jquery" );
 		bundle.asset( "js-loadmore" ).dependsOn( "js-jquery" );
+		bundle.asset( "js-search").dependsOn( "js-jquery" );
 	}
 
 }

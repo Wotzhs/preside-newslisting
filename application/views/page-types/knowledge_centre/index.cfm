@@ -10,4 +10,9 @@
 <cfoutput>
 	<h1>#args.title#</h1>
 	#args.main_content#
+
+	<cfloop query="args.searchResults">
+		<h1>#title#</h1>
+		<p>#teaser#</p>
+	</cfloop>
 </cfoutput>

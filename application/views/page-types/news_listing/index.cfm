@@ -8,6 +8,19 @@
 	<h1>#args.title#</h1>
 	#args.main_content#
 
+	<div class="row">
+		<form id="search">
+			<div class="col-sm-offset-7 col-sm-5">
+				<div class="input-group">	
+					<input type="text" name="search" class="form-control" placeholder="&##xf002; Lookup for a news">
+					<span class="input-group-btn">
+				        <button class="btn btn-primary" type="button">Go!</button>
+				      </span>
+				</div>
+			</div>
+		</form>
+	</div>
+	<br>
 	<div class="row" id="newslist">
 		<cfloop query="#args.data#">
 			<a href="#'news/'&slug&'.html'#">
@@ -30,6 +43,8 @@
 	</div>
 
 	<input type="hidden" id="numberOfNews" value="#args.numberOfNews#">
+
+	<div class="row" id="searchResult"></div>
 </cfoutput>
 
 <button class="btn btn-default" id="loadmore">Load More News!</button>
